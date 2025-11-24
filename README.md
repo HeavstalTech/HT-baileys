@@ -1,7 +1,7 @@
 <div align='center'>HT-baileys (Heavstal Tech Edition)</div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Bell575/Upload/main/uploads/1742387351904.png" alt="HT-baileys Banner" width="100%" />
+  <img src="https://files.catbox.moe/vi3npg.png" alt="HT-baileys Banner" width="100%" />
 
   <br/>
   <br/>
