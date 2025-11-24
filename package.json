@@ -1,25 +1,29 @@
 {
-  "name": "baileys-pro",
-  "version": "0.0.4",
-  "description": "WhatsApp API",
+  "name": "@heavstaltech/baileys",
+  "version": "1.0.0",
+  "description": "The Official Heavstal Tech Modified Baileys Library",
   "keywords": [
     "whatsapp",
+    "heavstal-tech",
+    "heavstal",
     "js-whatsapp",
     "whatsapp-api",
     "whatsapp-web",
-    "whatsapp-chat",
-    "whatsapp-group",
     "automation",
     "multi-device"
   ],
-  "homepage": "https://github.com/FizzxyTheGreat/baileyss",
+  "homepage": "https://github.com/Promise818/HT-baileys#readme",
   "repository": {
-    "url": "git@github.com:zervidas/baileys-pro.git"
+    "type": "git",
+    "url": "git+https://github.com/Promise818/HT-baileys.git"
   },
   "license": "MIT",
-  "author": "Adhiraj Singh",
+  "author": "Heavstal Tech",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "lib/*",
     "WAProto/*.ts",
