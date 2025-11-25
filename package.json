@@ -1,11 +1,12 @@
 {
   "name": "@heavstaltech/baileys",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Official Heavstal Tech Modified Baileys Library",
   "keywords": [
-    "whatsapp",
+    "HT-baileys",
     "heavstal-tech",
     "heavstal",
+    "whatsapp",
     "js-whatsapp",
     "whatsapp-api",
     "whatsapp-web",
