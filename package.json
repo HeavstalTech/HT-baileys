@@ -1,6 +1,6 @@
 {
   "name": "@heavstaltech/baileys",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Official Heavstal Tech Modified Baileys Library",
   "keywords": [
     "HT-baileys",
@@ -13,10 +13,10 @@
     "automation",
     "multi-device"
   ],
-  "homepage": "https://github.com/Promise818/HT-baileys#readme",
+  "homepage": "https://github.com/HeavstalTech/HT-baileys#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Promise818/HT-baileys.git"
+    "url": "git+https://github.com/HeavstalTech/HT-baileys.git"
   },
   "license": "MIT",
   "author": "Heavstal Tech",
