@@ -355,6 +355,65 @@ await sock.sendMessage(jid, {
 }, { quoted: m });
 ```
 
+### send orderMessage
+```javascript
+const fs = require('fs');
+const ZeppImg = fs.readFileSync('./ZeppImage');
+
+await client.sendMessage(m.chat, {
+  thumbnail: ZeppImg,
+  message: "Gotta get a grip",
+  orderTitle: "7eppeli-Corporation",
+  totalAmount1000: 72502,
+  totalCurrencyCode: "IDR"
+}, { quoted:m })
+```
+
+### send pollResultSnapshotMessage
+```javascript
+await client.sendMessage(m.chat, {
+  pollResultMessage: {
+    name: "7eppeli-Corporation",
+    options: [
+      {
+        optionName: "poll 1"
+      },
+      {
+        optionName: "poll 2"
+      }
+    ],
+    newsletter: {
+      newsletterName: "7eppeli | Killer Queen Information",
+      newsletterJid: "1@newsletter"
+    }
+  }
+})
+```
+
+### send productMessage
+```javascript
+await client.relayMessage(m.chat, {
+  productMessage {
+    title: "7eppeli.pdf",
+    description: "zZZ...",
+    thumbnail: { url: "./ZeppImage" },
+    productId: "EXAMPLE_TOKEN",
+    retailerId: "EXAMPLE_RETAILER_ID",
+    url: "https://t.me/YuukeyD7eppeli",
+    body: "Nak Tido",
+    footer: "Footer",
+    buttons: [
+      {
+        name: "cta_url",
+        buttonParamsJson: "{\"display_text\":\"7eppeli-Pdf\",\"url\":\"https://t.me/YuukeyD7eppeli\"}"
+      }
+    ],
+    priceAmount1000: 72502,
+    currencyCode: "IDR"
+  }
+})
+```
+
 ---
 
 ## About Heavstal Tech
