@@ -1,13 +1,16 @@
 {
-    "name": "tenka-san/WaBails",
-    "version": "1.7.3",
-    "description": "WhatsApp Modified By 7eppeli",
+    "name": "@heavstaltech/baileys",
+    "version": "4.0.6",
+    "description": "Modified Baileys By Heavstal Tech",
     "keywords": [
-        "whatsapp-baileys"
+        "whatsapp-baileys",
+        "heavstal-tech",
+        "baileys",
+        "WhatsApp"
     ],
-    "homepage": "https://github.com/tenka-san/WaBails",
+    "homepage": "https://heavstal-tech.vercel.app/modules/ht-baileys",
     "repository": {
-        "url": "https://github.com/tenka-san/WaBails"
+        "url": "https://github.com/HeavstalTech/HT-baileys"
     },
     "license": "MIT",
     "author": "7eppeli - Determinator",
@@ -101,6 +104,6 @@
         "node": ">=20.0.0"
     }, 
     "bugs": {
-      "url": "https://tenka-san/WaBails/issues"
+      "url": "https://github.com/HeavstalTech/HT-baileys/issues"
     }
 }
