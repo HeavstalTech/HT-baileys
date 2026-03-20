@@ -358,12 +358,12 @@ await sock.sendMessage(jid, {
 ### send orderMessage
 ```javascript
 const fs = require('fs');
-const ZeppImg = fs.readFileSync('./ZeppImage');
+const Img = fs.readFileSync('./Image.png');
 
 await client.sendMessage(m.chat, {
-  thumbnail: ZeppImg,
-  message: "Gotta get a grip",
-  orderTitle: "7eppeli-Corporation",
+  thumbnail: Img,
+  message: "Gotta get a grip on it fam",
+  orderTitle: "Heavstal Tech",
   totalAmount1000: 72502,
   totalCurrencyCode: "IDR"
 }, { quoted:m })
@@ -373,7 +373,7 @@ await client.sendMessage(m.chat, {
 ```javascript
 await client.sendMessage(m.chat, {
   pollResultMessage: {
-    name: "7eppeli-Corporation",
+    name: "HeavstalTech",
     options: [
       {
         optionName: "poll 1"
@@ -383,7 +383,7 @@ await client.sendMessage(m.chat, {
       }
     ],
     newsletter: {
-      newsletterName: "7eppeli | Killer Queen Information",
+      newsletterName: "Heavstal Tech | Building Tomorrow's Web Today",
       newsletterJid: "1@newsletter"
     }
   }
@@ -394,18 +394,18 @@ await client.sendMessage(m.chat, {
 ```javascript
 await client.relayMessage(m.chat, {
   productMessage {
-    title: "7eppeli.pdf",
-    description: "zZZ...",
-    thumbnail: { url: "./ZeppImage" },
+    title: "Temp.pdf",
+    description: "null...",
+    thumbnail: { url: "../Image.png" },
     productId: "EXAMPLE_TOKEN",
     retailerId: "EXAMPLE_RETAILER_ID",
-    url: "https://t.me/YuukeyD7eppeli",
+    url: "https://t.me/HeavstalTech",
     body: "Nak Tido",
     footer: "Footer",
     buttons: [
       {
         name: "cta_url",
-        buttonParamsJson: "{\"display_text\":\"7eppeli-Pdf\",\"url\":\"https://t.me/YuukeyD7eppeli\"}"
+        buttonParamsJson: "{\"display_text\":\"Temp-Pdf\",\"url\":\"https://t.me/HeavstalTech\"}"
       }
     ],
     priceAmount1000: 72502,
