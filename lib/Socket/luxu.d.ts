@@ -1,7 +1,6 @@
-// dugong.d.ts
 import { proto } from '../../WAProto';
 
-declare namespace kikyy {
+declare namespace imup {
     interface MediaUploadOptions {
         fileEncSha256?: Buffer;
         mediaType?: string;
@@ -70,20 +69,20 @@ declare namespace kikyy {
     }
 
     interface InteractiveMessage {
-        header?: string;
         title: string;
         footer?: string;
         thumbnail?: string;
         image?: string | Buffer | { url: string };
         video?: string | Buffer | { url: string };
-        document?: string | Buffer | { url: string };
+        document?: Buffer;
         mimetype?: string;
         fileName?: string;
-        jpegThumbnail?: string | Buffer | { url: string };
+        jpegThumbnail?: Buffer;
         contextInfo?: {
             mentionedJid?: string[];
             forwardingScore?: number;
             isForwarded?: boolean;
+            forwardedNewsletterMessageInfo?: proto.Message.ContextInfo.ForwardedNewsletterMessageInfo;
             externalAdReply?: {
                 title?: string;
                 body?: string;
@@ -117,8 +116,8 @@ declare namespace kikyy {
     }
 
     interface AlbumItem {
-        image?: string | Buffer | { url: string; caption?: string };
-        video?: string | Buffer | { url: string; caption?: string };
+        image?: { url: string; caption?: string };
+        video?: { url: string; caption?: string };
     }
 
     interface EventMessageLocation {
@@ -146,9 +145,28 @@ declare namespace kikyy {
     interface PollResultMessage {
         name: string;
         pollVotes: PollVote[];
+        newsletter?: {
+            newsletterName: string;
+            newsletterJid: string;
+        };
     }
 
-    interface GroupStatusMessage {
+    interface StatusMentionMessage {
+        image?: { url: string } | string;
+        video?: { url: string } | string;
+        mentions: string[];
+    }
+
+    interface OrderMessage {
+        thumbnail?: Buffer | string,
+        itemCount?: string | number,
+        message: string,
+        orderTitle: string,
+        totalAmount1000?: string | number,
+        totalCurrencyCode?: string
+    }
+    
+    interface GroupStatus {
         message?: any;
         image?: string | Buffer | { url: string };
         video?: string | Buffer | { url: string };
@@ -156,6 +174,10 @@ declare namespace kikyy {
         caption?: string;
         document?: string | Buffer | { url: string };
         [key: string]: any;
+    }
+    
+    interface GroupLabel {
+        labelText: string;
     }
  
     interface MessageContent {
@@ -165,7 +187,9 @@ declare namespace kikyy {
         albumMessage?: AlbumItem[];
         eventMessage?: EventMessage;
         pollResultMessage?: PollResultMessage;
-        groupStatusMessage?: GroupStatusMessage;
+        groupStatus?: GroupStatus;
+        orderMessage?: OrderMessage;
+        groupLabel?: GroupLabel;
         sender?: string;
     }
 
@@ -180,75 +204,75 @@ declare namespace kikyy {
         generateWAMessageFromContent: (jid: string, content: any, options?: any) => Promise<any>;
         generateWAMessage: (jid: string, content: any, options?: any) => Promise<any>;
         generateMessageID: () => string;
-        prepareMessageContent?: (content: any, options?: any) => Promise<any>;
-    }
-
-    interface BailUtils {
-        generateWAMessageContent?: (content: any, options: WAMessageContentGenerationOptions) => Promise<any>;
-        generateMessageID: () => string;
-        getContentType: (msg: any) => string;
     }
 }
 
-declare class kikyy {
+declare class imup {
     constructor(
-        utils: kikyy.Utils,
-        waUploadToServer: kikyy.WAMediaUploadFunction,
+        utils: imup.Utils,
+        waUploadToServer: imup.WAMediaUploadFunction,
         relayMessageFn?: (jid: string, content: any, options?: any) => Promise<any>
     );
     
-    detectType(content: kikyy.MessageContent): 'PAYMENT' | 'PRODUCT' | 'INTERACTIVE' | 'ALBUM' | 'EVENT' | 'POLL_RESULT' | 'GROUP_STORY' | null;
+    detectType(content: imup.MessageContent): 'PAYMENT' | 'PRODUCT' | 'INTERACTIVE' | 'ALBUM' | 'EVENT' | 'POLL_RESULT' | 'GROUP_STATUS' | 'ORDER' | 'GROUP_LABEL' |null;
 
     handlePayment(
-        content: { requestPaymentMessage: kikyy.PaymentMessage },
+        content: { requestPaymentMessage: imup.PaymentMessage },
         quoted?: proto.IWebMessageInfo
     ): Promise<{ requestPaymentMessage: proto.Message.RequestPaymentMessage }>;
 
     handleProduct(
-        content: { productMessage: kikyy.ProductMessage },
+        content: { productMessage: imup.ProductMessage },
         jid: string,
         quoted?: proto.IWebMessageInfo
     ): Promise<{ viewOnceMessage: proto.Message.ViewOnceMessage }>;
 
     handleInteractive(
-        content: { interactiveMessage: kikyy.InteractiveMessage },
+        content: { interactiveMessage: imup.InteractiveMessage },
         jid: string,
         quoted?: proto.IWebMessageInfo
     ): Promise<{ interactiveMessage: proto.Message.InteractiveMessage }>;
 
     handleAlbum(
-        content: { albumMessage: kikyy.AlbumItem[] },
+        content: { albumMessage: imup.AlbumItem[] },
         jid: string,
         quoted?: proto.IWebMessageInfo
     ): Promise<any>;
 
     handleEvent(
-        content: { eventMessage: kikyy.EventMessage },
+        content: { eventMessage: imup.EventMessage },
         jid: string,
         quoted?: proto.IWebMessageInfo
     ): Promise<any>;
     
     handlePollResult(
-        content: { pollResultMessage: kikyy.PollResultMessage },
+        content: { pollResultMessage: imup.PollResultMessage },
         jid: string,
         quoted?: proto.IWebMessageInfo
     ): Promise<any>;
 
+    handleStMention(
+        content: { statusMentionMessage: imup.StatusMentionMessage },
+        jid: string,
+        quoted?: proto.IWebMessageInfo
+    ): Promise<any>;
+
+    handleOrderMessage(
+        content: { orderMessage: imup.OrderMessage },
+        jid: string,
+        quoted?: proto.IWebMessageInfo
+    ): Promise<any>;
+    
     handleGroupStory(
-        content: { groupStatusMessage: kikyy.GroupStatusMessage },
+        content: { groupStatus: imup.GroupStatus },
         jid: string,
         quoted?: proto.IWebMessageInfo
     ): Promise<any>;
-
-    buildMessageContent(
-        content: any,
-        opts?: kikyy.WAMessageContentGenerationOptions
+    
+    handleGbLabel(
+        content: { groupLabel: imup.GroupLabel },
+        jid: string,
     ): Promise<any>;
-
-    utils: kikyy.Utils;
-    relayMessage: (jid: string, content: any, options?: any) => Promise<any>;
-    waUploadToServer: kikyy.WAMediaUploadFunction;
-    bail: kikyy.BailUtils;
 }
 
-export = kikyy;
+export = imup;

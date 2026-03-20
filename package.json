@@ -1,24 +1,16 @@
 {
-    "name": "@heavstaltech/baileys",
-    "version": "3.2.6",
-    "description": "The Official Heavstal Tech Modified Baileys Library",
+    "name": "tenka-san/WaBails",
+    "version": "1.7.3",
+    "description": "WhatsApp Modified By 7eppeli",
     "keywords": [
-        "whatsapp",
-        "baileys",
-        "whatsapp-web",
-        "heavstal-tech",
-        "HT-baileys",
-        "Websockets"
+        "whatsapp-baileys"
     ],
-    "homepage": "https://www.npmjs.com/package/@heavstaltech/baileys",
+    "homepage": "https://github.com/tenka-san/WaBails",
     "repository": {
-        "url": "https://github.com/HeavstalTech/HT-baileys"
+        "url": "https://github.com/tenka-san/WaBails"
     },
-    "bugs": {
-    "url": "https://github.com/HeavstalTech/HT-baileys/issues"
-  },
     "license": "MIT",
-    "author": "HEAVSTAL TECH",
+    "author": "7eppeli - Determinator",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
@@ -53,7 +45,7 @@
         "futoin-hkdf": "^1.5.1",
         "libphonenumber-js": "^1.10.20",
         "lodash": "^4.17.21",
-        "libsignal": "npm:@shennmine/libsignal-node",
+        "libsignal": "github:tenka-san/libsignal-node",
         "music-metadata": "^7.12.3",
         "node-cache": "^5.1.2",
         "node-fetch": "^2.6.1",
@@ -68,9 +60,9 @@
         "@types/jest": "^27.5.1",
         "@types/node": "^16.0.0",
         "@types/sharp": "^0.29.4",
-        "@types/ws": "^8.5.9",
+        "@types/ws": "^8.0.0",
         "conventional-changelog-cli": "^2.2.2",
-        "eslint": "^9.39.2",
+        "eslint": "^8.0.0",
         "jest": "^27.0.6",
         "jimp": "^0.16.1",
         "link-preview-js": "^3.0.0",
@@ -107,5 +99,8 @@
     "packageManager": "yarn@1.22.19",
     "engines": {
         "node": ">=20.0.0"
+    }, 
+    "bugs": {
+      "url": "https://tenka-san/WaBails/issues"
     }
 }
