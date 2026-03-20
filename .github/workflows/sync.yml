@@ -1,0 +1,69 @@
+name: Sync External Repo
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+
+    steps:
+      - name: Checkout Own Repo
+        uses: actions/checkout@v4
+        with:
+          path: 'current-repo'
+
+      - name: Checkout Public Repo
+        uses: actions/checkout@v4
+        with:
+          repository: 'tenka-san/WaBails'
+          path: 'source-repo'
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Process Files (Node.js)
+        shell: node {0}
+        run: |
+          const fs = require('fs');
+          const path = require('path');
+
+          const currentDir = path.join(process.cwd(), 'current-repo');
+          const sourceDir = path.join(process.cwd(), 'source-repo');
+          const oldReadme = path.join(currentDir, 'README.md');
+          const newFah = path.join(currentDir, 'FAH.md');
+          if (fs.existsSync(oldReadme)) {
+              fs.renameSync(oldReadme, newFah);
+              console.log('Renamed README.md to FAH.md');
+          }
+          const files = fs.readdirSync(currentDir);
+          files.forEach(file => {
+              if (file !== '.github' && file !== '.git' && file !== 'FAH.md') {
+                  const p = path.join(currentDir, file);
+                  fs.rmSync(p, { recursive: true, force: true });
+              }
+          });
+          console.log('Emptied repository (preserved .github and FAH.md)');
+
+          const sourceFiles = fs.readdirSync(sourceDir);
+          sourceFiles.forEach(file => {
+              if (file !== '.github' && file !== '.git') {
+                  const src = path.join(sourceDir, file);
+                  const dest = path.join(currentDir, file);
+                  fs.renameSync(src, dest);
+              }
+          });
+          console.log('Copied files from source repository');
+
+      - name: Commit and Push Changes
+        working-directory: ./current-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          # Only commit if there are changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Sync from external repo" && git push)
