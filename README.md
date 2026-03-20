@@ -1,5 +1,7 @@
 <div align='center'>HT-baileys</div>
 
+ <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+ 
 <div align="center">
   <img src="https://files.catbox.moe/vi3npg.png" alt="HT-baileys Banner" width="100%" />
   <br/><br/>
@@ -433,3 +435,5 @@ This software is provided "as is", without warranty of any kind. Users are respo
 <div align="center">
   <sub>© 2025 - 2026 Heavstal Tech. All rights reserved.</sub>
 </div>
+
+ <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
