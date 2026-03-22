@@ -34,6 +34,8 @@ Actively developed and maintained, baileys continuously receives updates to enha
 
 This library is highly suitable for building business bots, chat automation systems, customer service solutions, and various other communication automation applications that require high stability and comprehensive features. With a lightweight and modular design, baileys is easy to integrate into different systems and platforms.
 
+### Occasionally Visit [CHANGELOG.md](https://github.com/HeavstalTech/HT-baileys/blob/main/CHANGELOG.md) to see updates made to this library 
+
 ## Features Overview
 
 | Feature | Description |
