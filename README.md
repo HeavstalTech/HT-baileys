@@ -34,8 +34,6 @@ Actively developed and maintained, baileys continuously receives updates to enha
 
 This library is highly suitable for building business bots, chat automation systems, customer service solutions, and various other communication automation applications that require high stability and comprehensive features. With a lightweight and modular design, baileys is easy to integrate into different systems and platforms.
 
-v4.0.7 - This verison fixes WhatsApp 405 error
-
 ## Features Overview
 
 | Feature | Description |
