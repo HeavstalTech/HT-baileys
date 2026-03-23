@@ -109,3 +109,25 @@ connectToWhatsApp()
 - And much more!
 
 > **Note:** This version doesn't support buttons, conider using other moded libraries for sending of buttons
+
+
+
+## About Heavstal Tech
+
+**Heavstal Tech** is a forward-thinking technology organization dedicated to building robust tools and ecosystems for the modern web. From automation libraries to full-stack applications, we prioritize performance, scalability, and developer experience.
+
+🌐 **Official Website:** [https://heavstal-tech.vercel.app](https://heavstal-tech.vercel.app)
+
+## Disclaimer
+
+**HT-baileys** is an independent project maintained by **Heavstal Tech**. It is not affiliated with, authorized, maintained, sponsored, or endorsed by WhatsApp Inc. or Meta Platforms, Inc.
+
+This software is provided "as is", without warranty of any kind. Users are responsible for ensuring their usage complies with WhatsApp's Terms of Service.
+
+---
+
+<div align="center">
+  <sub>© 2025 - 2026 Heavstal Tech. All rights reserved.</sub>
+</div>
+
+ <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
