@@ -14,25 +14,59 @@ This project is not affiliated, associated, authorized, endorsed by, or in any w
 ## Installation
 
 ```bash
-npm install gifted-baileys
+npm install @heavstaltech/baileys
 ```
 
 Or using yarn:
 ```bash
-yarn add gifted-baileys
+yarn add @heavstaltech/baileys
 ```
 
 ## Quick Start
 
 ### CommonJS (Recommended)
 ```javascript
-const { default: makeWASocket, useMultiFileAuthState, Browsers } = require('gifted-baileys')
+const { default: makeWASocket, useMultiFileAuthState, Browsers } = require('@heavstaltech/baileys')
+// use same code below
 ```
 
 ### ES Modules / TypeScript
 ```javascript
-import pkg from 'gifted-baileys'
-const { default: makeWASocket, useMultiFileAuthState, Browsers } = pkg
+import makeWASocket, { 
+    useMultiFileAuthState, 
+    DisconnectReason, 
+    Browsers 
+} from '@heavstaltech/baileys'
+
+async function connectToWhatsApp() {
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info')
+
+    const sock = makeWASocket({
+        auth: state,
+        printQRInTerminal: false, // Set to true if using QR scanning
+        browser: Browsers.macOS("Desktop"),
+        syncFullHistory: true
+    })
+
+    sock.ev.on('connection.update', (update) => {
+        const { connection, lastDisconnect } = update
+        
+        if(connection === 'close') {
+            const shouldReconnect = (lastDisconnect?.error as any)?.output?.statusCode !== DisconnectReason.loggedOut
+            console.log('Connection closed. Reconnecting:', shouldReconnect)
+            
+            if(shouldReconnect) {
+                connectToWhatsApp()
+            }
+        } else if(connection === 'open') {
+            console.log('Connection opened successfully')
+        }
+    })
+
+    sock.ev.on('creds.update', saveCreds)
+}
+
+connectToWhatsApp()
 ```
 
 ## Features
@@ -48,9 +82,4 @@ const { default: makeWASocket, useMultiFileAuthState, Browsers } = pkg
 - Profile management
 - And much more!
 
-> **Note:** For sending buttons, please use the [gifted-btns](https://npmjs.com/package/gifted-btns) package.
-
-## Documentation
-
-Full documentation is available at [baileys.giftedtech.co.ke](https://baileys.giftedtech.co.ke)
-
+> **Note:** This version doesn't support buttons, conider using other moded libraries for sending of buttons
