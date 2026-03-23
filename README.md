@@ -1,10 +1,23 @@
+<div align='center'>HT-baileys</div>
+
+ <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+ 
 <div align="center">
-  <h1>Gifted-Baileys</h1>
-  <p>A WebSocket-based JavaScript library for interacting with the WhatsApp Web API</p>
-  
-  [![npm version](https://img.shields.io/npm/v/gifted-baileys.svg)](https://www.npmjs.com/package/gifted-baileys)
-  [![npm downloads](https://img.shields.io/npm/dm/gifted-baileys.svg)](https://www.npmjs.com/package/gifted-baileys)
-  [![License](https://img.shields.io/npm/l/gifted-baileys.svg)](https://github.com/mauricegift/gifted-baileys/blob/main/LICENSE)
+  <img src="https://files.catbox.moe/vi3npg.png" alt="HT-baileys Banner" width="100%" />
+  <br/><br/>
+
+  <a href="https://heavstal-tech.vercel.app">
+    <img src="https://img.shields.io/badge/Maintainer-Heavstal_Tech-007acc?style=for-the-badge&logo=vercel&logoColor=white" alt="Heavstal Tech" />
+  </a>
+  <a href="https://www.npmjs.com/package/@heavstaltech/baileys">
+    <img src="https://img.shields.io/badge/NPM-@heavstaltech/baileys-cb3837?style=for-the-badge&logo=npm&logoColor=white" alt="NPM" />
+  </a>
+  <a href="https://github.com/HeavstalTech/HT-baileys">
+    <img src="https://img.shields.io/badge/Version-4.2.0-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Version" />
+  </a>
+  <a href="https://github.com/HeavstalTech/HT-baileys/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-fab005?style=for-the-badge" alt="License" />
+  </a>
 </div>
 
 ## Disclaimer
