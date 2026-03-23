@@ -18,7 +18,7 @@ jobs:
       - name: Checkout Public Repo
         uses: actions/checkout@v4
         with:
-          repository: 'tenka-san/WaBails'
+          repository: 'mauricegift/gifted-baileys'
           path: 'source-repo'
 
       - name: Setup Node.js 20
