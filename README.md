@@ -95,6 +95,26 @@ async function connectToWhatsApp() {
 connectToWhatsApp()
 ```
 
+### Important Note for ES Module (`"type": "module"`) Users
+
+Because `@heavstaltech/baileys` is compiled as a CommonJS module, Node.js cannot detect its named exports during the import phase. Attempting to use standard named imports will throw a `SyntaxError: Named export not found`.
+
+To fix this, you must import the entire package as a default object and destructure the variables/functions from it:
+
+**Incorrect (Will throw an error):**
+```javascript
+import { proto, delay, getContentType, areJidsSameUser, generateWAMessage } from "@heavstaltech/baileys";
+```
+
+**Correct (Destructuring the default export):**
+```javascript
+import pkg from "@heavstaltech/baileys";
+const { proto, delay, getContentType, areJidsSameUser, generateWAMessage } = pkg;
+```
+
+*(Note: If you need to import the main socket function, which is exported as `default` under the hood, you can alias it during the destructuring like this: `const { default: makeWASocket } = pkg;`)*
+
+
 ## Features
 
 - Full WhatsApp Web API support
