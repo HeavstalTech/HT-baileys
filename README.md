@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/NPM-@heavstaltech/baileys-cb3837?style=for-the-badge&logo=npm&logoColor=white" alt="NPM" />
   </a>
   <a href="https://github.com/HeavstalTech/HT-baileys">
-    <img src="https://img.shields.io/badge/Version-4.2.0-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Version" />
+    <img src="https://img.shields.io/badge/Version-4.3.1-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Version" />
   </a>
   <a href="https://github.com/HeavstalTech/HT-baileys/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-fab005?style=for-the-badge" alt="License" />
