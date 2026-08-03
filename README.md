@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/NPM-@heavstaltech/baileys-cb3837?style=for-the-badge&logo=npm&logoColor=white" alt="NPM" />
   </a>
   <a href="https://github.com/HeavstalTech/HT-baileys">
-    <img src="https://img.shields.io/badge/Version-4.3.1-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Version" />
+    <img src="https://img.shields.io/badge/Version-4.4.2-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Version" />
   </a>
   <a href="https://github.com/HeavstalTech/HT-baileys/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-fab005?style=for-the-badge" alt="License" />
@@ -136,7 +136,7 @@ const { proto, delay, getContentType, areJidsSameUser, generateWAMessage } = pkg
 
 **Heavstal Tech** is a forward-thinking technology organization dedicated to building robust tools and ecosystems for the modern web. From automation libraries to full-stack applications, we prioritize performance, scalability, and developer experience.
 
-🌐 **Official Website:** [https://heavstal-tech.vercel.app](https://heavstal-tech.vercel.app)
+🌐 **Official Website:** [https://heavstal.com.ng](https://heavstal.com.ng)
 
 ## Disclaimer
 
