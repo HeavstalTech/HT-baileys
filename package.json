@@ -1,6 +1,6 @@
 {
     "name": "@heavstaltech/baileys",
-    "version": "4.4.1",
+    "version": "4.4.2",
     "description": "A lightweight, full-featured WhatsApp Web API library for Node.js, modified by Heavstal Tech 2026.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
